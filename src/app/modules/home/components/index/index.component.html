@@ -1,0 +1,45 @@
+<p-carousel [value]="banner" styleClass="custom-carousel" [numVisible]="1" [numScroll]="1" [circular]="true"
+  [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
+
+  <ng-template let-product pTemplate="item">
+    <div class="product-item">
+      <div class="product-item-content">
+        <div class="mb-3">
+          <img src="{{serverUri}}{{product.bannerImageUrl}}" alt="product.bannerImageAlt" class=" product-image" />
+        </div>
+
+      </div>
+    </div>
+  </ng-template>
+</p-carousel>
+
+<ng-container *ngFor="let item of categories; index as i">
+
+  <p-card *ngIf="item.enabled">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 col-xs-6 text-center col-6   ">
+        <img *ngIf="i%2!==0" src="{{serverUri}}{{item.imageUrl}}" height="100%" width="50%" alt="">
+        <ng-container *ngIf="i%2===0">
+          <h4>{{item.name}}</h4>
+          <p>{{item.description}}</p>
+          <button pButton pRipple type="button" id="navigate" (click)="navigateToProduct(item.id)"
+            label="Explore {{item.key}}" class="p-button-raised p-button-danger  btn-color"></button>
+        </ng-container>
+      </div>
+      <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 col-xs-6 text-center col-6 ">
+        <img *ngIf="i%2===0" src="{{serverUri}}{{item.imageUrl}}" height="100%" width="50%" alt="">
+        <ng-container *ngIf="i%2!==0">
+          <h4>{{item.name}}</h4>
+          <p>{{item.description}}</p>
+          <button pButton pRipple type="button" id="navigate" (click)="navigateToProduct(item.id)"
+            label="Explore {{item.key}}" class="p-button-raised p-button-danger btn-color"></button>
+        </ng-container>
+
+
+      </div>
+    </div>
+    <hr class="hr1">
+
+
+  </p-card>
+</ng-container>

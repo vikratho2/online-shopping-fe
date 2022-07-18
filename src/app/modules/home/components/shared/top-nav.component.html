@@ -1,0 +1,32 @@
+<p class="text-right m-0 mt-1">
+  <span class="mr-4 cursor-pointer" routerLink="signIn">
+    SignIn
+  </span>
+  <span class="mr-4 cursor-pointer" routerLink="register">
+    Register
+  </span>
+</p>
+<nav class="navbar navbar-expand-lg navbar-light shadow">
+  <a class="navbar-brand" routerLink="/"><img src="/assets/logo.jpeg" height="60" alt=""></a>
+  <div class="form-inline my-2 my-lg-0 cursor-pointer show-cart" (click)="openCart()">
+    <i class="pi pi-shopping-cart mr-2 font-color" style="font-size: 2rem"></i> {{cartData.length}} items
+  </div>
+  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+
+  </button> -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item  " routerLinkActive="is-active">
+        <a class="nav-link" routerLink="/">Home </a>
+      </li>
+      <li class="nav-item" routerLinkActive="is-active">
+        <a class="nav-link" routerLink="/products">Products </a>
+      </li>
+    </ul>
+    <div class="form-inline my-2 my-lg-0 cursor-pointer" (click)="openCart()">
+      <i class="pi pi-shopping-cart mr-2 font-color" style="font-size: 2rem"></i> {{cartData.length}} items
+    </div>
+  </div>
+</nav>

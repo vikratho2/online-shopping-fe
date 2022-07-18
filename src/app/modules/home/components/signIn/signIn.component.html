@@ -1,0 +1,33 @@
+<div class="container mb-3">
+  <div class="row">
+    <div class="col-md-6">
+      <h4>Login</h4>
+      <p>Get access to your Orders. Wishlist and Recommendations </p>
+    </div>
+    <div class="col-md-6">
+      <form [formGroup]="signInForm" (submit)="signInFormSubmit()">
+
+        <span class="p-float-label mt-4 ">
+          <input id="float-input" type="text" formControlName="email" class="w-100" pInputText>
+          <label for="float-input">Email</label>
+
+        </span>
+        <small class="text-danger"
+          *ngIf="signInForm.get('email')?.invalid && (signInFormSubmitted || signInForm.get('email')?.touched)">
+          <span>Required</span>
+
+        </small>
+        <span class="p-float-label mt-4">
+          <input id="float-input" type="password" formControlName="password" class="w-100" pInputText>
+          <label for="float-input">Password</label>
+        </span>
+        <small class="text-danger"
+          *ngIf="signInForm.get('password')?.invalid && (signInFormSubmitted || signInForm.get('password')?.touched)">
+          <span>Required</span>
+        </small>
+        <button pButton pRipple [disabled]="!signInForm.valid" type="submit" label="Login"
+          class="p-button-danger mt-3 w-100 btn-color"></button>
+      </form>
+    </div>
+  </div>
+</div>

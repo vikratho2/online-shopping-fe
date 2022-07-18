@@ -1,0 +1,65 @@
+<div class="container mb-3">
+  <div class="row">
+
+
+    <div class="col-md-6">
+      <h4>Signup</h4>
+      <p>We do not share your personal details with anyone.</p>
+    </div>
+    <div class="col-md-6">
+      <form [formGroup]="registerForm" (submit)="registerFormSubmit()">
+        <span class="p-float-label ">
+          <input id="float-input" formControlName="firstName" type="text" class="w-100" pInputText>
+          <label for="float-input">First Name</label>
+        </span>
+        <small class="text-danger"
+          *ngIf="registerForm.get('firstName')?.invalid && (registerFormSubmitted || registerForm.get('firstName')?.touched)">
+          <span>Required</span>
+
+        </small>
+        <span class="p-float-label mt-3 ">
+          <input id="float-input" formControlName="lastName" type="text" class="w-100" pInputText>
+          <label for="float-input">Last Name</label>
+        </span>
+        <small class="text-danger"
+          *ngIf="registerForm.get('lastName')?.invalid && (registerFormSubmitted || registerForm.get('lastName')?.touched)">
+          <span>Required</span>
+
+        </small>
+        <span class="p-float-label mt-3 ">
+          <input id="float-input" formControlName="email" type="text" class="w-100" pInputText>
+          <label for="float-input">Email</label>
+        </span>
+        <small class="text-danger"
+          *ngIf="registerForm.get('email')?.invalid && (registerFormSubmitted || registerForm.get('email')?.touched)">
+          <span>Required</span>
+
+        </small>
+        <span class="p-float-label mt-3">
+          <input id="float-input" formControlName="password" type="password" class="w-100" pInputText>
+          <label for="float-input">Password</label>
+        </span>
+        <small class="text-danger"
+          *ngIf="registerForm.get('password')?.invalid && (registerFormSubmitted || registerForm.get('password')?.touched)">
+          <span>Required</span>
+
+        </small>
+        <span class="p-float-label mt-3">
+          <input id="float-input" formControlName="confirmPassword" type="password" class="w-100" pInputText>
+          <label for="float-input">Confirm Password</label>
+        </span>
+        <small class="text-danger"
+          *ngIf="registerForm.get('confirmPassword')?.invalid && (registerFormSubmitted || registerForm.get('confirmPassword')?.touched)">
+          <span>Required</span>
+
+        </small>
+        <small class="text-danger" *ngIf="registerForm.get('confirmPassword')?.errors?.notSame">
+          <span>password not same</span>
+
+        </small>
+        <button pButton pRipple [disabled]=" !registerForm.valid" type="submit" label="Signup"
+          class="p-button-danger mt-3 w-100 btn-color"></button>
+      </form>
+    </div>
+  </div>
+</div>

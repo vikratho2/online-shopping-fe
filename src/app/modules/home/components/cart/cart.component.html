@@ -1,0 +1,58 @@
+<ng-container *ngIf="cartData && cartData.length;else emptyCart">
+  <h5>My Cart ({{cartData.length}} items)</h5>
+  <ng-container *ngFor="let item of cartData">
+    <div class="d-flex  shadow mt-3">
+      <img src="{{serverUri}}{{item.imageURL}}" height="50%" width="30%" alt="">
+      <div class="ml-2 w-100 p-2">
+        <b>{{item.name}}</b>
+
+        <ul class="nav cart-control">
+
+
+
+          <li><button pButton pRipple type="button" icon="pi pi-minus" (click)="itemDecrement(item.id)"
+              class="p-button-rounded control btn-color p-button-danger"></button></li>
+          <li>{{item.itemCount}}</li>
+          <li><button pButton pRipple type="button" icon="pi pi-plus"
+              class="p-button-rounded control btn-color p-button-danger" (click)="itemIncrement(item.id)"></button>
+          </li>
+          <li>
+            X
+          </li>
+          <li>Rs. {{item.price}}</li>
+          <li class="m-auto">
+
+            Rs. {{item.price * item.itemCount}}
+
+          </li>
+
+
+        </ul>
+
+      </div>
+    </div>
+  </ng-container>
+  <div class="card mt-2">
+    <div class="card-body">
+      <img src="/assets/promo.jpeg" alt=""> You won't find it cheaper anywhere
+    </div>
+  </div>
+  <p class="mt-2 text-center">Promo code can be applied on payment page</p>
+  <button class="btn btn-block btn-color btn-danger">
+    <div class="d-flex justify-content-between">
+      <span>
+        Proceed to Checkout
+      </span>
+      <span>
+        Rs. {{total}} <i class="pi pi-angle-right"></i>
+      </span>
+
+    </div>
+  </button>
+
+</ng-container>
+<ng-template #emptyCart>
+  <h4 class="text-center">No items in your cart</h4>
+  <p class="text-center">Your favorite items are just a click away</p>
+  <button class="btn btn-block btn-danger btn-color mt-5" (click)="startShopping()">Start Shopping</button>
+</ng-template>

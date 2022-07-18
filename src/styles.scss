@@ -1,1 +1,87 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  font-size: 14px !important;
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+.custom-carousel{
+  text-align: center !important;
+}
+.btn-color{
+  color: #ffff;
+  background-color: #a6113b !important;
+}
+.font-color{
+  color: #a6113b;
+}
+.active-product{
+  color: #ffff;
+    background-color: #a6113b !important;
+}
+
+.p-carousel-indicator button{
+
+  width: 14px !important;
+  height: 15px !important;
+  border-radius: 20px !important;
+}
+.p-highlight button{
+  background-color: #a6113b !important;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #a6113b;
+  border-radius: 10px;
+  border: 3px solid #ffffff;
+}
+
+.pi-chevron-left:before{
+  content: 'PREV' !important;
+}
+.pi-chevron-right:before{
+  content: 'NEXT' !important;
+}
+.p-carousel .p-carousel-content .p-carousel-prev,
+.p-carousel .p-carousel-content .p-carousel-next{
+    width: auto !important;
+      height: 2rem;
+      color: #ffff !important;
+      padding: 5px !important;
+
+      background: #0000005e !important;
+      border-radius: 0px !important;
+      transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+      margin: 0.5rem;
+}
+
+.show-cart {
+  display: none;
+}
+.custom-cart {
+  padding: 7px !important;
+}
+
+
+@media only screen and (max-width: 1000px) {
+.show-cart{
+  display: block;
+}
+}
+.btn-link:hover{
+  color: #FFFF;
+}
+
